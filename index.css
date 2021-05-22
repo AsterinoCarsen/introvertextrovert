@@ -1,9 +1,31 @@
 body {
-    background-color: #242424;
+    background-color: white;
 }
 
 .LandingPage {
     font-family: Verdana;
-    color: white;
+    color: gray;
     text-align: center;
+}
+
+.Questions {
+    color: gray;
+    text-align: center;
+}
+
+.oneSlider {
+    width: 35%;
+    -webkit-appearance: none;
+    background-image: url('src/gradient.png');
+    background-size: cover;
+    opacity: 0.5;
+    margin-bottom: 200px;
+}
+
+.oneSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 3px solid black;
 }
