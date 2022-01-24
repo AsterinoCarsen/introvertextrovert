@@ -2,6 +2,24 @@ body {
     background-color: white;
 }
 
+h1 {
+    font-family: 'Verdana';
+    font-size: 50px;
+    padding: 15px;
+}
+
+h2 {
+    font-family: 'Verdana';
+    font-size: 25px;
+    padding: 10px;
+}
+
+p {
+    font-family: 'Consolas';
+    font-size: 25px;
+    padding: 5px;
+}
+
 .LandingPage {
     font-family: Verdana;
     color: gray;
@@ -13,7 +31,11 @@ body {
     text-align: center;
 }
 
-.oneSlider {
+.Questions > * {
+    margin-bottom: 50vh;
+}
+
+.slider {
     width: 35%;
     -webkit-appearance: none;
     background-image: url('src/gradient.png');
@@ -22,7 +44,7 @@ body {
     margin-bottom: 200px;
 }
 
-.oneSlider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 25px;
     height: 25px;
@@ -35,7 +57,7 @@ body {
     text-align: center;
     font-family: Verdana;
     font-size: 25px;
-    background-color: springgreen;
+    background-color: rgb(88, 255, 171);
     opacity: 0.75;
     width: 200px;
     height: 75px;
