@@ -14,9 +14,8 @@
 
     <div class="Questions" style="margin-top: 200px">
         <div class="one">
-            <p>You regularly make new friends.</p>
+            <p>I find it difficult to make new friends.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r1"/>
-            <p id="i1"></p>
         </div>
 
         <div class="two">
@@ -25,7 +24,7 @@
         </div>
 
         <div class="three">
-            <p>I always consult others before making a decision.</p>
+            <p>I rely on my own personal intuition to make decisions more than other people's advice.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r3"/>
         </div>
 
@@ -40,12 +39,12 @@
         </div>
 
         <div class="six">
-            <p>I want to meet as many people as possible.</p>
+            <p>I do not like to meet new people.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r6"/>
         </div>
 
         <div class="seven">
-            <p>When I'm feeling down, I seek support from others.</p>
+            <p>When I'm feeling down, I seek to console myself with alone time.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r7"/>
         </div>
 
@@ -55,7 +54,7 @@
         </div>
 
         <div class="nine">
-            <p>I get along with people quickly and easily.</p>
+            <p>It takes me longer to open up to and be expressive around new people.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r9"/>
         </div>
 
@@ -65,12 +64,12 @@
         </div>
 
         <div class="eleven">
-            <p>I think small talk can be very important.</p>
+            <p>I think small talk is meaningless and stressful to do.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r11"/>
         </div>
 
         <div class="twelve">
-            <p>I enjoy meeting new people.</p>
+            <p>I find meeting new people draining and exhausting.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r12"/>
         </div>
 
@@ -80,17 +79,17 @@
         </div>
 
         <div class="fourteen">
-            <p>I spend lots of time with my friends.</p>
+            <p>I spend less time with friends than most people.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r14"/>
         </div>
 
         <div class="fifteen">
-            <p>I don't worry about being liked by strangers.</p>
+            <p>I worry about being liked by strangers.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r15">
         </div>
 
         <div class="sixteen">
-            <p>I get along with open and expressive people.</p>
+            <p>I do not get along with open and expressive people.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r16"/>
         </div>
 
@@ -100,7 +99,7 @@
         </div>
 
         <div class="eighteen">
-            <p>Being alone for any significant period of time feels very uncomfortable.</p>
+            <p>I find it easy to spend long periods of time by myself.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r18"/>
         </div>
 
@@ -113,10 +112,40 @@
             <p>I keep my feelings to myself.</p>
             <input type="range" min="-5" max="5" value="0" class="slider" id="r20"/>
         </div>
-
-        <button type="button" class="submit"><b>Submit</b></button>
     </div>
 
+    <div class="SubmitContainer">
+        <button type="button" class="submit" onclick="SubmitTest()"><b>Submit</b></button>
+        <h3>Most introverted is 5, most extroverted is -5.</h3>
+        <h3>Your score is:</h3>
+        <h3 id="output">TBD</h3>
+    </div>
+
+    <script>
+        // Negative is extrovert and positive is introvert
+        function SubmitTest() 
+        {
+            // Make a new array, loop through every range in the HTML to get it's value
+            var values = new Array();
+            for (let i = 1; i < 21; i++)
+            {
+                // Create a string in accordance with the HTML using r1, r2, r3...
+                let nextRange = "r" + i.toString();
+                values[i] = document.getElementById(nextRange).value;
+            }
+            // Remove the first element in the array, it's a null element from creating the array
+            values = values.splice(1, 21);
+
+            // Create a finalScore variable, iterate through values, turning each element into an int, adding it to finalScore, then dividing by 20 to get the average score
+            let finalScore = 0;
+            for (let i = 0; i < values.length; i++)
+            {
+                finalScore += parseInt(values[i]);
+            }
+            finalScore /= 20;
+            document.getElementById("output").innerHTML = finalScore.toString();
+        }
+    </script>
 </body>
 
 </html>
