@@ -20,6 +20,14 @@ p {
     padding: 5px;
 }
 
+.SubmitContainer {
+    text-align: center;
+    font-family: 'Consolas';
+    font-size: 25px;
+    padding: 5px;
+    color: gray;
+}
+
 .LandingPage {
     font-family: Verdana;
     color: gray;
